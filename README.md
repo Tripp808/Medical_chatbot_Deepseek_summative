@@ -70,33 +70,6 @@ The fine-tuned model was evaluated using the following metrics:
    - **Recall**: 0.80 (23.08% improvement)
    - **F1**: 0.80 (19.40% improvement)
 
-# Example Conversations
-
-## Medical Question
-
-**User:**  
-"What are the symptoms of diabetes?"
-
-**Chatbot:**
-
-```
-<think>
-Diabetes symptoms include frequent urination, excessive thirst, and unexplained weight loss. These occur due to the body's inability to properly utilize sugar, leading to hyperglycemia.
-</think>
-```
-
-The symptoms of diabetes include frequent urination, excessive thirst, and unexplained weight loss. Managing blood sugar levels is crucial to prevent complications.
-
-## Non-Medical Question
-
-**User:**  
-"How do I bake a cake?"
-
-**Chatbot:**  
-"I'm sorry, I can only respond to medical-related questions."
-
----
-
 ## Key Insights
 
 - **Domain Specificity:** The chatbot effectively restricts responses to medical questions, ensuring relevance and accuracy.
@@ -139,31 +112,6 @@ The best-performing experiment used the following hyperparameters:
 
 The chatbot was tested on medical and non-medical questions to ensure domain specificity. It successfully handles medical queries while rejecting non-medical questions with a predefined response:
 "I'm sorry, I can only respond to medical-related questions."
-
----
-
-## **Steps to Run the Chatbot**
-
-### **1. Clone the Repository**
-
-git clone https://github.com/Tripp808/medical_chatbot_summative
-
-cd medical-chatbot
-
-### **2. Clone the Repository**
-
-Install Dependencies:
-
-pip install -r requirements.txt
-
-### **3. Run the Chatbot**
-
-To interact with the chatbot, run the Gradio interface:
-python scripts/chatbot_interaction.py
-
-Alternatively, you can open the Jupyter Notebook:
-
-jupyter notebook medical_chatbot.ipynb
 
 ---
 
@@ -225,6 +173,31 @@ Next, if just changing your lifestyle isn't enough, doctors might suggest some m
 - **Domain Specificity:** The chatbot effectively restricts responses to medical questions, ensuring relevance and accuracy.
 - **Improved Performance:** Fine-tuning with LoRA significantly improved the model's BLEU score and perplexity.
 - **User-Friendly Interface:** The Gradio interface makes it easy for users to interact with the chatbot.
+
+---
+
+## **Steps to Run the Chatbot**
+
+### **1. Clone the Repository**
+
+git clone https://github.com/Tripp808/medical_chatbot_summative
+
+cd medical-chatbot
+
+### **2. Clone the Repository**
+
+Install Dependencies:
+
+pip install -r requirements.txt
+
+### **3. Run the Chatbot**
+
+To interact with the chatbot, run the Gradio interface:
+python scripts/chatbot_interaction.py
+
+Alternatively, you can open the Jupyter Notebook:
+
+jupyter notebook medical_chatbot.ipynb
 
 ---
 
