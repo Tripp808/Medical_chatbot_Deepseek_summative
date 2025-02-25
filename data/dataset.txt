@@ -1,0 +1,3 @@
+Link to the dataset (It is too large for github): 
+[Medical O1 Reasoning SFT]
+(https://huggingface.co/datasets/FreedomIntelligence/medical-o1-reasoning-SFT)
