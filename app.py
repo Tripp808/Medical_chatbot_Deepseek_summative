@@ -6,7 +6,22 @@ from unsloth import FastLanguageModel  # Import FastLanguageModel for inference 
 restricted_words = [
     "bake", "cake", "cooking", "recipe", "joke", "capital", "France", "weather",
     "sports", "movie", "music", "travel", "politics", "celebrity", "investment",
-    "football", "basketball", "technology", "AI", "art", "fashion", "economy"
+    "football", "basketball", "technology", "AI", "art", "fashion", "economy",
+    "science", "mathematics", "history", "geography", "astronomy", "space",
+    "gaming", "anime", "manga", "cartoon", "comic", "fiction", "fantasy",
+    "mythology", "philosophy", "psychology", "self-help", "motivation",
+    "relationship", "dating", "love", "friendship", "family", "career",
+    "business", "startup", "entrepreneurship", "marketing", "advertising",
+    "finance", "banking", "stock market", "cryptocurrency", "real estate",
+    "home improvement", "gardening", "DIY", "craft", "pets", "animals",
+    "wildlife", "nature", "climate", "environment", "sustainability",
+    "energy", "transportation", "automobile", "cars", "bikes", "trains",
+    "aviation", "military", "war", "weapons", "guns", "law", "legal",
+    "court", "crime", "mystery", "detective", "thriller", "horror",
+    "drama", "romance", "action", "adventure", "comedy", "news",
+    "gossip", "viral", "trending", "internet", "social media",
+    "memes", "influencer", "content creation", "YouTube", "streaming",
+    "Netflix", "HBO", "Disney", "Apple", "Google", "Microsoft", "Amazon"
 ]
 
 # Define the model_lora as a global variable
@@ -66,20 +81,94 @@ def generate_response(question):
     
     return response
 
-# Create the Gradio interface
+# my css UI
+custom_css = """
+.gradio-container {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gradio-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gradio-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.gradio-header p {
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+.gradio-examples {
+    margin-top: 20px;
+}
+
+.gradio-examples h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.gradio-examples p {
+    font-size: 1rem;
+    color: #34495e;
+}
+"""
+
+# Gradio interface with my implemented UI
 iface = gr.Interface(
     fn=generate_response,  # Function to generate responses
-    inputs=gr.Textbox(lines=2, placeholder="Enter your medical question here..."),  # Input textbox
-    outputs="text",  # Output textbox
-    title="Medical Chatbot",  # Title of the interface
-    description="Ask any medical-related question and get a detailed response from the fine-tuned DeepSeek R1 model.",  # Description
+    inputs=gr.Textbox(
+        lines=2,
+        placeholder="Enter your medical question here...",
+        label="Ask a Medical Question"
+    ),  # Input textbox
+    outputs=gr.Textbox(
+        label="Chatbot Response",
+        placeholder="The chatbot's response will appear here..."
+    ),  # Output textbox
+    description="""
+    <div class="gradio-header">
+        <h1>Medical Chatbot</h1> 
+        <p>Ask any medical-related question and get a detailed response from the fine-tuned DeepSeek R1 model.</p>
+    </div>
+    """,  # Description with custom HTML
     examples=[  # Example questions for user guidance
         ["What are the symptoms of diabetes?"],
         ["How is hypertension treated?"],
         ["What is the best way to manage asthma?"]
     ],
-    theme="default"  # Interface theme
+    theme="default",  # Interface theme
+    css=custom_css  # Custom CSS for styling
 )
 
+# Add a section for examples
+iface.examples = [
+    ["What are the symptoms of diabetes?"],
+    ["How is hypertension treated?"],
+    ["What is the best way to manage asthma?"]
+]
+
+# Add a footer with additional information
+iface.footer = """
+<div class="gradio-examples">
+    <h3>Example Questions</h3>
+    <p>Try asking:</p>
+    <ul>
+        <li>What are the symptoms of diabetes?</li>
+        <li>How is hypertension treated?</li>
+        <li>What is the best way to manage asthma?</li>
+    </ul>
+</div>
+"""
+
 # Launch the Gradio interface
-iface.launch()
+iface.launch(share=True)  # Set `share=True` for public URL
