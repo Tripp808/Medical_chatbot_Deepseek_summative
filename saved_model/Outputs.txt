@@ -1,0 +1,1 @@
+The model output files are too large for github so I uploaded them here: https://huggingface.co/OcheAnkeli/Medic-chatbot
