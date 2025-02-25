@@ -11,16 +11,21 @@ The chatbot is fine-tuned using **LoRA (Low-Rank Adaptation)** for efficient par
 ### **Demo Video Link**
 
 A demo video showcasing the chatbot’s functionality, user interactions, and key insights is available here:
-Demo Video Link
+Demo Video Link: https://youtu.be/Etd3DF0HThg
 
 ---
 
 ### **Hugging Face Model**
 
-The fine-tuned model is hosted on Hugging Face for easy access:
+Due to the large size and unable to upload on Github, the fine-tuned model is hosted on Hugging Face for easy access:
 Hugging Face Model Link https://huggingface.co/OcheAnkeli/Medic-chatbot
 
 ---
+
+### **Live UI link**
+
+The chatbot UI implementation on Gradio:
+live Link https://7717cf619baced7d3f.gradio.live
 
 ## **Repository Structure**
 
