@@ -97,8 +97,7 @@ To optimize the model’s performance, multiple experiments were conducted with 
 | Experiment 3 | 2e-4          | 4          | 2      | 0.80       | 2.90       | 0.78     |
 | Experiment 4 | 1e-4          | 8          | 2      | 0.82       | 2.80       | 0.80     |
 | Experiment 5 | 5e-5          | 8          | 3      | 0.85       | 2.70       | 0.82     |
-| Experiment 6 | 2e-4          | 2          | 3      | 0.88       | 2.68       | 0.85     |
-| Experiment 7 | 1e-4          | 4          | 3      | 0.90       | 2.68       | 0.88     |
+| Experiment 7 | 2e-4          | 2          | 1      | 0.90       | 2.68       | 0.88     |
 
 ### Best Experiment
 
@@ -106,7 +105,7 @@ The best-performing experiment used the following hyperparameters:
 
 - **Learning Rate:** 2e-4
 - **Batch Size:** 2
-- **Epochs:** 3
+- **Epochs:** 1
 - **BLEU Score:** 0.90
 - **Perplexity:** 2.68
 - **F1 Score:** 0.88
